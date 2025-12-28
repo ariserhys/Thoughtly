@@ -17,7 +17,6 @@ export function SquircleCard({
   variant = "elevated",
   children,
   style,
-  className,
   ...props
 }: SquircleCardProps) {
   const { isDark } = useTheme();
@@ -53,7 +52,7 @@ export function SquircleCard({
   }
 
   return (
-    <View style={cardStyle} className={className} {...props}>
+    <View style={cardStyle} {...props}>
       {children}
     </View>
   );
