@@ -4,7 +4,6 @@ import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
-  FadeIn,
   runOnJS,
   useAnimatedStyle,
   useSharedValue,
@@ -121,10 +120,7 @@ export function SwipeableEntryCard({
       : entry.content;
 
   return (
-    <Animated.View
-      entering={FadeIn.delay(index * 50).springify()}
-      style={styles.wrapper}
-    >
+    <View style={styles.wrapper}>
       {/* Delete action behind card */}
       <Animated.View style={[styles.deleteAction, deleteButtonStyle]}>
         <Pressable onPress={handleDelete} style={styles.deleteButton}>
@@ -178,7 +174,7 @@ export function SwipeableEntryCard({
           </SquircleCard>
         </Animated.View>
       </GestureDetector>
-    </Animated.View>
+    </View>
   );
 }
 

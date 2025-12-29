@@ -1,5 +1,6 @@
+import { createMMKV, MMKV } from "react-native-mmkv";
 
-export const storage = new MMKV({
+export const storage: MMKV = createMMKV({
   id: "thoughtly-storage",
 });
 

@@ -32,8 +32,9 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "f28cd295-c1be-426d-92ce-8d5ca254467f"
+        "projectId": "8349a85f-fb17-4d74-be6b-f581c02444c4"
       }
-    }
+    },
+    "owner": "ariserhys"
   }
 }

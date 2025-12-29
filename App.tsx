@@ -18,7 +18,7 @@ import {
   View,
 } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import Animated, { FadeIn } from "react-native-reanimated";
+
 import { EmptyState } from "./components/EmptyState";
 import { EntryDetail } from "./components/EntryDetail";
 import { NewEntrySheet } from "./components/NewEntrySheet";
@@ -104,7 +104,7 @@ function HomeScreen() {
       <StatusBar style={isDark ? "light" : "dark"} />
 
       {/* Header */}
-      <Animated.View entering={FadeIn.duration(300)} style={styles.header}>
+      <View style={styles.header}>
         <View>
           <Text style={[styles.title, { color: colors.textPrimary }]}>
             Thoughtly
@@ -120,19 +120,16 @@ function HomeScreen() {
             <Moon size={22} color={colors.textMuted} />
           )}
         </Pressable>
-      </Animated.View>
+      </View>
 
       {/* Search */}
-      <Animated.View
-        entering={FadeIn.delay(100).duration(300)}
-        style={styles.searchContainer}
-      >
+      <View style={styles.searchContainer}>
         <SearchBar
           value={searchQuery}
           onChangeText={setSearchQuery}
           placeholder="Search thoughts..."
         />
-      </Animated.View>
+      </View>
 
       {/* Entry List */}
       {entries.length === 0 && !isLoading ? (
